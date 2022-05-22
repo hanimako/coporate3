@@ -1,0 +1,783 @@
+@charset "UTF-8";
+/* ----------------------------------------------------
+  common
+---------------------------------------------------- */
+body {
+  font-size: 1rem;
+  color: #121212;
+  font-family: "Noto Sans JP", "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans" ,Meiryo, sans-serif;
+}
+
+button {
+  padding: 0;
+}
+
+img {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+@media screen and (min-width: 960px) {
+  .container {
+    padding: 0 40px;
+  }
+}
+
+/*
+  各セクションのタイトルテキスト
+  .ttl  タイトルと左右の横棒の配置指定
+  .ttl__txt  タイトルのスタイル指定
+  .ttl__line  左右の横棒のスタイル指定
+*/
+.ttl {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.ttl__txt {
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+.ttl__line {
+  width: 20%;
+  height: 1px;
+  border-bottom: 1px solid;
+}
+
+@media screen and (min-width: 960px) {
+  .main {
+    margin-left: 300px;
+  }
+}
+
+/* ----------------------------------------------------
+  header
+---------------------------------------------------- */
+.spHeader {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 10px 8px 8px 18px;
+  background-color: #fff;
+  z-index: 10;
+}
+
+@media screen and (min-width: 960px) {
+  .spHeader {
+    display: none;
+  }
+}
+
+.spHeader .logo {
+  width: 180px;
+}
+
+.hambugerMenu {
+  position: absolute;
+  top: 10px;
+  right: 6px;
+  z-index: 30;
+  width: 54px;
+  height: 54px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 960px) {
+  .hambugerMenu {
+    display: none;
+  }
+}
+
+.hambugerMenu__icon {
+  position: fixed;
+  display: block;
+  margin-left: 12px;
+  width: 30px;
+  height: 2px;
+  border-top: 2px solid;
+}
+
+.hambugerMenu__icon::before,
+.hambugerMenu__icon::after {
+  position: absolute;
+  content: "";
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-top: 2px solid;
+  -webkit-transition: -webkit-transform .4s;
+  transition: -webkit-transform .4s;
+  transition: transform .4s;
+  transition: transform .4s, -webkit-transform .4s;
+}
+
+.hambugerMenu__icon::before {
+  top: -14px;
+}
+
+.hambugerMenu__icon::after {
+  top: 10px;
+}
+
+/* メニュー */
+.mainMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  padding-top: 40px;
+  padding-left: 45px;
+  width: 300px;
+  background-color: #fff;
+  -webkit-transform: translateX(-300px);
+          transform: translateX(-300px);
+  z-index: 30;
+  -webkit-transition: -webkit-transform .3s;
+  transition: -webkit-transform .3s;
+  transition: transform .3s;
+  transition: transform .3s, -webkit-transform .3s;
+}
+
+@media screen and (min-width: 960px) {
+  .mainMenu {
+    -webkit-transition: none;
+    transition: none;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+.mainMenu .logo {
+  width: 200px;
+}
+
+.main__nav {
+  margin-top: 38px;
+}
+
+.main__nav > li {
+  font-size: 0.875rem;
+}
+
+.main__nav > li + li {
+  margin-top: 16px;
+}
+
+.main__nav > li > a {
+  color: #121212;
+}
+
+.sns {
+  margin-top: 76px;
+}
+
+.sns > li + li {
+  margin-top: 16px;
+}
+
+.sns > li > a {
+  color: #121212;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 20;
+}
+
+/*
+ ハンバーガーメニューボタン押下のスタイル
+ */
+.appear .mainMenu {
+  -webkit-transform: none;
+          transform: none;
+  padding-left: 25px;
+}
+
+@media screen and (min-width: 960px) {
+  .appear .mainMenu {
+    padding-left: 45px;
+  }
+}
+
+.appear .mainMenu .logo {
+  display: none;
+}
+
+@media screen and (min-width: 960px) {
+  .appear .mainMenu .logo {
+    display: block;
+  }
+}
+
+.appear .mainMenu .main__nav {
+  margin-top: 0;
+}
+
+@media screen and (min-width: 960px) {
+  .appear .mainMenu .main__nav {
+    margin-top: 38px;
+  }
+}
+
+.appear .overlay {
+  display: block;
+}
+
+@media screen and (min-width: 960px) {
+  .appear .overlay {
+    display: none;
+  }
+}
+
+.appear .hambugerMenu__icon {
+  border-color: transparent;
+}
+
+.appear .hambugerMenu__icon::before,
+.appear .hambugerMenu__icon::after {
+  border-color: #fff;
+  top: -2px;
+  left: 1px;
+}
+
+.appear .hambugerMenu__icon::before {
+  -webkit-transform: rotate(315deg);
+          transform: rotate(315deg);
+}
+
+.appear .hambugerMenu__icon::after {
+  -webkit-transform: rotate(-315deg);
+          transform: rotate(-315deg);
+}
+
+/* ----------------------------------------------------
+  メインヴィジュアル（動画）
+---------------------------------------------------- */
+.video__wrapper {
+  position: fixed;
+  top: 72px;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -1;
+}
+
+@media screen and (min-width: 960px) {
+  .video__wrapper {
+    top: 0;
+  }
+}
+
+.video {
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+/* ----------------------------------------------------
+  「建築事例を紹介」エリア
+---------------------------------------------------- */
+.gradientBox {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.8)));
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
+}
+
+.case {
+  color: #fff;
+  margin-top: 100vh;
+  padding-top: 60px;
+}
+
+@media screen and (min-width: 960px) {
+  .case {
+    padding-top: 80px;
+  }
+}
+
+.case__list {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+@media screen and (min-width: 960px) {
+  .case__list {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    gap: 50px 56px;
+    margin-top: 60px;
+  }
+}
+
+.pic {
+  border: 1px solid #fff;
+}
+
+.pic > a {
+  color: #fff;
+}
+
+.pic__figure {
+  position: relative;
+}
+
+.pic__figure::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(84%, rgba(0, 0, 0, 0)), color-stop(94%, rgba(0, 0, 0, 0.6)), to(rgba(0, 0, 0, 0.6)));
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 84%, rgba(0, 0, 0, 0.6) 94%, rgba(0, 0, 0, 0.6));
+}
+
+.pic__caption {
+  position: absolute;
+  left: 7px;
+  bottom: 4px;
+  font-size: 0.75rem;
+  z-index: 1;
+}
+
+/* ----------------------------------------------------
+  「明るいHOUSEの特徴」エリア
+---------------------------------------------------- */
+.feature {
+  padding-top: 120px;
+  padding-bottom: 120px;
+  color: #fff;
+}
+
+@media screen and (min-width: 960px) {
+  .feature {
+    padding-top: 160px;
+    padding-bottom: 160px;
+  }
+}
+
+.feature__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 30px;
+}
+
+.feature__item {
+  width: 30%;
+  text-align: center;
+}
+
+.feature__circle {
+  position: relative;
+  font-size: 0.875rem;
+  padding: calc(50% - 9px) 0;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.feature__circle::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  background-color: rgba(255, 255, 255, 0.3);
+  -webkit-transition: width .6s;
+  transition: width .6s;
+}
+
+.feature__circle:hover::before {
+  width: 100%;
+}
+
+.feature__ttl {
+  margin-top: 15px;
+}
+
+/* ----------------------------------------------------
+  「家ができるまでの流れ」エリア
+---------------------------------------------------- */
+.workflow {
+  padding-top: 60px;
+  background-color: #fff;
+}
+
+@media screen and (min-width: 960px) {
+  .workflow {
+    padding-top: 120px;
+  }
+}
+
+.workflow__txt {
+  margin-top: 30px;
+}
+
+@media screen and (min-width: 960px) {
+  .workflow__txt {
+    margin-top: 60px;
+  }
+}
+
+.workflow__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 30px;
+}
+
+@media screen and (min-width: 960px) {
+  .workflow__inner {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin-top: 60px;
+  }
+}
+
+.workflow__shape {
+  position: relative;
+  padding: 0 20px;
+}
+
+@media screen and (min-width: 960px) {
+  .workflow__shape {
+    padding: 0;
+  }
+}
+
+.workflow__shape > li {
+  position: relative;
+  margin: 0 auto;
+  height: 80px;
+  text-align: center;
+  padding: 30px 0;
+  font-size: 0.875rem;
+  color: #fff;
+  background-color: #414141;
+}
+
+@media screen and (min-width: 960px) {
+  .workflow__shape > li {
+    width: 200px;
+  }
+}
+
+/* ボックスの下の逆三角形 */
+.workflow__shape > li::after {
+  position: absolute;
+  content: "";
+  top: 100%;
+  left: 0;
+  width: 100%;
+  border-left: calc(50vw - 40px) solid transparent;
+  border-right: calc(50vw - 40px) solid transparent;
+  border-top: 30px solid #414141;
+}
+
+@media screen and (min-width: 960px) {
+  .workflow__shape > li::after {
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+  }
+}
+
+/* 各シェイプをつなぐ縦長の長方形 */
+.workflow__shape::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 50px;
+  height: 600px;
+  background-color: #FFDD00;
+}
+
+.workflow__shape > li + li {
+  margin-top: 60px;
+}
+
+.workflow .list {
+  margin-top: 80px;
+}
+
+@media screen and (min-width: 960px) {
+  .workflow .list {
+    margin-top: 0;
+    margin-left: 40px;
+  }
+}
+
+.workflow .list {
+  counter-reset: num;
+}
+
+.workflow .list > li {
+  position: relative;
+  margin-left: 45px;
+}
+
+.workflow .list > li::before {
+  position: absolute;
+  counter-increment: num;
+  content: counter(num);
+  top: 0;
+  left: -45px;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  border-radius: 50%;
+  font-weight: bold;
+  color: #fff;
+  background: #414141;
+}
+
+.workflow .list > li + li {
+  margin-top: 45px;
+}
+
+.workflow .list__ttl {
+  padding-bottom: 8px;
+  font-size: 1.25rem;
+  border-bottom: 1px solid;
+}
+
+.workflow .list__txt {
+  margin-top: 10px;
+}
+
+/* ----------------------------------------------------
+  「お問い合わせ」エリア
+---------------------------------------------------- */
+.contact {
+  padding-top: 120px;
+  padding-bottom: 120px;
+  background-color: #fff;
+}
+
+@media screen and (min-width: 960px) {
+  .contact {
+    padding-top: 160px;
+    padding-bottom: 160px;
+  }
+}
+
+.contact__txt {
+  margin-top: 30px;
+}
+
+@media screen and (min-width: 960px) {
+  .contact__txt {
+    margin-top: 60px;
+  }
+}
+
+.contact__list {
+  display: -ms-grid;
+  display: grid;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+@media screen and (min-width: 960px) {
+  .contact__list {
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+    gap: 5%;
+    margin-top: 60px;
+  }
+}
+
+.card {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 auto;
+  text-align: center;
+  width: 60%;
+  height: 183px;
+  border: 1px solid;
+  color: #121212;
+}
+
+@media screen and (min-width: 960px) {
+  .card {
+    width: 100%;
+  }
+}
+
+.card:hover {
+  border-width: 3px;
+}
+
+.card::before {
+  position: absolute;
+  content: "";
+  right: 4px;
+  bottom: 4px;
+  width: 0;
+  height: 0;
+  border-bottom: 20px solid;
+  border-left: 20px solid transparent;
+}
+
+.card__img {
+  width: 64px;
+}
+
+.card__txt {
+  font-size: 0.875rem;
+}
+
+/* ----------------------------------------------------
+  footer
+---------------------------------------------------- */
+.footer {
+  color: #fff;
+  background-color: #121212;
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+
+@media screen and (min-width: 960px) {
+  .footer {
+    margin-left: 300px;
+  }
+}
+
+.footer__nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+@media screen and (min-width: 960px) {
+  .footer__nav {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+.footer__nav > li > a {
+  color: #fff;
+}
+
+.footer__nav > li + li {
+  margin-left: 20px;
+  padding-left: 20px;
+  border-left: 1px solid;
+  font-size: 0.875rem;
+}
+
+.copyright {
+  margin-top: 70px;
+  text-align: center;
+  font-size: 0.75rem;
+}
+
+@media screen and (min-width: 960px) {
+  .copyright {
+    margin-top: 60px;
+  }
+}
+
+/* ----------------------------------------------------
+  トップに戻るアイコン
+---------------------------------------------------- */
+#to-top {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  background-color: #121212;
+  opacity: 0;
+  -webkit-transition: opacity .8s;
+  transition: opacity .8s;
+}
+
+#to-top.scrolled {
+  opacity: 1;
+}
+
+#to-top i {
+  display: block;
+  width: 50px;
+  height: 50px;
+  font-size: 1.25rem;
+  line-height: 44px;
+  color: #fff;
+}
+/*# sourceMappingURL=style.css.map */
