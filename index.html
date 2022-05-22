@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>明るいHOUSE</title>
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header id="header">
+    <!-- sp画面用ヘッダー：sp画面に表示 -->
+    <div class="spHeader">
+      <h1>
+        <a href="index.html">
+          <img class="logo" src="img/logo.svg" alt="明るいHOUSE">
+        </a>
+      </h1>
+    </div>
+
+    <!-- バンバーガーメニュー：sp画面に表示 -->
+    <button id="menuToggleBtn" class="hambugerMenu">
+      <span class="hambugerMenu__icon"></span>
+    </button>
+
+    <!-- 画面グレーアウト表示：sp画面でメニュー表示時に表示 -->
+    <div class="overlay"></div>
+
+    <!-- メニュー：バンバーガーメニューボタン押下、またはPC画面に表示 -->
+    <div class="mainMenu">
+      <h1>
+        <a href="index.html">
+          <img class="logo" src="img/logo.svg" alt="明るいHOUSE">
+        </a>
+      </h1>
+      <nav>
+        <ul class="main__nav">
+          <li><a href="#">私たちについて</a></li>
+          <li><a href="#">サービス</a></li>
+          <li><a href="#">商品情報</a></li>
+          <li><a href="#">展示会</a></li>
+          <li><a href="#">暮らしの日記</a></li>
+          <li><a href="#">会社概要</a></li>
+        </ul>
+      </nav>
+      <ul class="sns">
+        <li><a href="">Twitter</a></li>
+        <li><a href="">facebook</a></li>
+        <li><a href="">instagram</a></li>
+      </ul>
+    </div>
+  </header>
+
+
+  <main class="main">
+    <!-- メインヴィジュアル（動画） -->
+    <section class="video__wrapper">
+      <video class="video" src="video/4847_640x360.mp4" autoplay muted loop></video>
+    </section>
+
+    <!-- 「トップへ戻る」ボタンの表示を制御する位置をid="target"で指定 -->
+    <div id="target"></div>
+
+    <div class="gradientBox">
+      <!-- 「建築事例を紹介」エリア -->
+      <section class="case container">
+        <div class="ttl">
+          <span class="ttl__line"></span>
+          <h2 class="ttl__txt">建築事例を紹介</h2>
+          <span class="ttl__line"></span>
+        </div>
+
+        <ul class="case__list">
+          <li class="pic">
+            <a href="#">
+              <figure class="pic__figure">
+                <img class="pic__img" src="img/project1.jpg" alt="">
+                <figcaption class="pic__caption">PROJECT_01</figcaption>
+              </figure>
+            </a>
+          </li>
+          <li class="pic">
+            <a href="#">
+              <figure class="pic__figure">
+                <img src="img/project2.jpg" alt="">
+                <figcaption class="pic__caption">PROJECT_02</figcaption>
+              </figure>
+            </a>
+          </li>
+          <li class="pic">
+            <a href="#">
+              <figure class="pic__figure">
+                <img src="img/project3.jpg" alt="">
+                <figcaption class="pic__caption">PROJECT_03</figcaption>
+              </figure>
+            </a>
+          </li>
+          <li class="pic">
+            <a href="#">
+              <figure class="pic__figure">
+                <img src="img/project4.jpg" alt="">
+                <figcaption class="pic__caption">PROJECT_04</figcaption>
+              </figure>
+            </a>
+          </li>
+        </ul><!-- case__list -->
+      </section>
+
+
+      <!-- 「明るいHOUSEの特徴」エリア -->
+      <section class="feature">
+        <div class="container">
+
+          <div class="ttl">
+            <span class="ttl__line"></span>
+            <h2 class="ttl__txt">明るいHOUSEの特徴</h2>
+            <span class="ttl__line"></span>
+          </div>
+
+          <ul class="feature__list">
+            <li class="feature__item">
+              <div class="feature__circle">design</div>
+              <h3 class="feature__ttl">デザイン</h3>
+              <p class="feature__txt">
+                テキストテキス
+                トテキスト
+              </p>
+            </li><!-- feature__item -->
+            <li class="feature__item">
+              <div class="feature__circle">quality</div>
+              <h3 class="feature__ttl">性能</h3>
+              <p class="feature__txt">
+                テキストテキス
+                トテキスト
+              </p>
+            </li><!-- feature__item -->
+            <li class="feature__item">
+              <div class="feature__circle">support</div>
+              <h3 class="feature__ttl">サポート</h3>
+              <p class="feature__txt">
+                テキストテキス
+                トテキスト
+              </p>
+            </li><!-- feature__item -->
+          </ul><!-- feature__list -->
+        </div><!-- container -->
+      </section>
+    </div><!-- gradientBox -->
+
+
+    <!-- 「家ができるまでの流れ」エリア -->
+    <section class="workflow">
+      <div class="container">
+
+        <div class="ttl">
+          <span class="ttl__line"></span>
+          <h2 class="ttl__txt">家ができるまでの流れ</h2>
+          <span class="ttl__line"></span>
+        </div>
+
+        <p class="workflow__txt">
+          お問い合わせいただいてから、家が完成するまでの流れです。
+        </p>
+
+        <div class="workflow__inner">
+          <ol class="workflow__shape">
+            <li>1.ヒアリング</li>
+            <li>2.プラン提案</li>
+            <li>3.契約</li>
+            <li>4.着工</li>
+            <li>5.完成</li>
+          </ol>
+          <ol class="list">
+            <li>
+              <h3 class="list__ttl">ヒアリング</h3>
+              <p class="list__txt">
+                テキストテキストテキストテキストテ
+                キストテキストテキストテキスト テキ
+                ストテキストテキストテキストテキス
+                トテキストテキストテキスト
+              </p>
+            </li>
+            <li>
+              <h3 class="list__ttl">プラン提案</h3>
+              <p class="list__txt">
+                テキストテキストテキストテキストテ
+                キストテキストテキストテキスト テキ
+                ストテキストテキストテキストテキス
+                トテキストテキストテキスト
+              </p>
+            </li>
+            <li>
+              <h3 class="list__ttl">契約</h3>
+              <p class="list__txt">
+                テキストテキストテキストテキストテ
+                キストテキストテキストテキスト テキ
+                ストテキストテキストテキストテキス
+                トテキストテキストテキスト
+              </p>
+            </li>
+            <li>
+              <h3 class="list__ttl">着工</h3>
+              <p class="list__txt">
+                テキストテキストテキストテキストテ
+                キストテキストテキストテキスト テキ
+                ストテキストテキストテキストテキス
+                トテキストテキストテキスト
+              </p>
+            </li>
+            <li>
+              <h3 class="list__ttl">完成</h3>
+              <p class="list__txt">
+                テキストテキストテキストテキストテ
+                キストテキストテキストテキスト テキ
+                ストテキストテキストテキストテキス
+                トテキストテキストテキスト
+              </p>
+            </li>
+          </ol>
+        </div><!-- workflow__body -->
+      </div><!-- container -->
+    </section>
+
+
+    <!-- 「お問い合わせ」エリア -->
+    <section class="contact">
+      <div class="container">
+        <div class="ttl">
+          <span class="ttl__line"></span>
+          <h2 class="ttl__txt">お問い合わせ</h2>
+          <span class="ttl__line"></span>
+        </div>
+
+        <p class="contact__txt">
+          お問い合わせは下記からお願いいたします。
+        </p>
+
+        <div class="contact__list">
+          <a class="card" href="#">
+            <img class="card__img" src="img/icon-document.png" alt="">
+            <span class="card__txt">資料請求</span>
+          </a>
+          <a class="card" href="#">
+            <img class="card__img" src="img/icon-seminar.png" alt="">
+            <span class="card__txt">Web説明会</span>
+          </a>
+          <a class="card" href="#">
+            <img class="card__img" src="img/icon-talk.png" alt="">
+            <span class="card__txt">個別相談</span>
+          </a>
+        </div><!-- contact__list -->
+      </div><!-- container -->
+    </section>
+  </main>
+
+
+  <footer class="footer">
+    <div class="container">
+      <nav>
+        <ul class="footer__nav">
+          <li><a href="#">私たちについて</a></li>
+          <li><a href="#">サービス</a></li>
+          <li><a href="#">商品情報</a></li>
+          <li><a href="#">展示会</a></li>
+          <li><a href="#">暮らしの日記</a></li>
+          <li><a href="#">会社概要</a></li>
+        </ul>
+      </nav>
+      <div class="copyright">
+        <small>Copyright &copy; 2022 Akarui HOUSE All Rights Reserved.</small>
+      </div>
+    </div>
+  </footer>
+
+  <!-- トップに戻るアイコン -->
+  <a href="" id="to-top">
+    <i class="bi bi-caret-up-fill"></i>
+  </a>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
