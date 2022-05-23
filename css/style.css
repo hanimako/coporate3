@@ -221,65 +221,65 @@ a {
 /*
  ハンバーガーメニューボタン押下のスタイル
  */
-.appear .mainMenu {
+.is-openMenu .mainMenu {
   -webkit-transform: none;
           transform: none;
   padding-left: 25px;
 }
 
 @media screen and (min-width: 960px) {
-  .appear .mainMenu {
+  .is-openMenu .mainMenu {
     padding-left: 45px;
   }
 }
 
-.appear .mainMenu .logo {
+.is-openMenu .mainMenu .logo {
   display: none;
 }
 
 @media screen and (min-width: 960px) {
-  .appear .mainMenu .logo {
+  .is-openMenu .mainMenu .logo {
     display: block;
   }
 }
 
-.appear .mainMenu .main__nav {
+.is-openMenu .mainMenu .main__nav {
   margin-top: 0;
 }
 
 @media screen and (min-width: 960px) {
-  .appear .mainMenu .main__nav {
+  .is-openMenu .mainMenu .main__nav {
     margin-top: 38px;
   }
 }
 
-.appear .overlay {
+.is-openMenu .overlay {
   display: block;
 }
 
 @media screen and (min-width: 960px) {
-  .appear .overlay {
+  .is-openMenu .overlay {
     display: none;
   }
 }
 
-.appear .hambugerMenu__icon {
+.is-openMenu .hambugerMenu__icon {
   border-color: transparent;
 }
 
-.appear .hambugerMenu__icon::before,
-.appear .hambugerMenu__icon::after {
+.is-openMenu .hambugerMenu__icon::before,
+.is-openMenu .hambugerMenu__icon::after {
   border-color: #fff;
   top: -2px;
   left: 1px;
 }
 
-.appear .hambugerMenu__icon::before {
+.is-openMenu .hambugerMenu__icon::before {
   -webkit-transform: rotate(315deg);
           transform: rotate(315deg);
 }
 
-.appear .hambugerMenu__icon::after {
+.is-openMenu .hambugerMenu__icon::after {
   -webkit-transform: rotate(-315deg);
           transform: rotate(-315deg);
 }

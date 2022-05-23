@@ -6,7 +6,7 @@
   const header = document.getElementById('header');
 
   menuToggleBtn.addEventListener('click', () => {
-    header.classList.toggle('appear');
+    header.classList.toggle('is-openMenu');
   });
 }
 

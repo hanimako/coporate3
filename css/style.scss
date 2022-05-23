@@ -192,44 +192,44 @@ a {
 /*
  ハンバーガーメニューボタン押下のスタイル
  */
-.appear .mainMenu {
+.is-openMenu .mainMenu {
   transform: none;
   padding-left: 25px;
   @include mediaScreenMedium {
     padding-left: 45px;
   }
 }
-.appear .mainMenu .logo {
+.is-openMenu .mainMenu .logo {
   display: none;
   @include mediaScreenMedium {
     display: block;
   }
 }
-.appear .mainMenu .main__nav {
+.is-openMenu .mainMenu .main__nav {
   margin-top: 0;
   @include mediaScreenMedium {
     margin-top: 38px;
   }
 }
-.appear .overlay {
+.is-openMenu .overlay {
   display: block;
   @include mediaScreenMedium {
     display: none;
   }
 }
-.appear .hambugerMenu__icon {
+.is-openMenu .hambugerMenu__icon {
   border-color: transparent;
 }
-.appear .hambugerMenu__icon::before,
-.appear .hambugerMenu__icon::after {
+.is-openMenu .hambugerMenu__icon::before,
+.is-openMenu .hambugerMenu__icon::after {
   border-color: #fff;
   top: -2px;
   left: 1px;
 }
-.appear .hambugerMenu__icon::before {
+.is-openMenu .hambugerMenu__icon::before {
   transform: rotate(315deg);
 }
-.appear .hambugerMenu__icon::after {
+.is-openMenu .hambugerMenu__icon::after {
   transform: rotate(-315deg);
 }
 
